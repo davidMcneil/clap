@@ -39,7 +39,7 @@ fn main() {
     // If seq fails to parse, the program exits, you don't have an option
     for v in matches
         .values_of_t::<u32>("seq")
-        .unwrap_or_else(|e| e.exit())
+        .unwrap_or_else(|mut e| e.exit())
     {
         println!("Sequence part {} + 2: {}", v, v + 2);
     }
